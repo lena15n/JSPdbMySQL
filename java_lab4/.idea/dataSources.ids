@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - my_java_db_schema@localhost" uuid="e50b9c9f-48cf-4e41-9f70-dd4a79229ee1">
+    <database-info product="MySQL" version="5.6.28-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="my_java_db_schema"/>
+      <table id="2" parent="1" name="dependent_java_table"/>
+      <table id="3" parent="1" name="main_table"/>
+      <view id="4" parent="1" name="new_view"/>
+      <column id="5" parent="2" name="Id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="6" parent="2" name="Name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="7" parent="2" name="Manager_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="8" parent="2" name="PRIMARY">
+        <columns>Id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="9" parent="2" name="Manager_id">
+        <columns>Manager_id</columns>
+        <ref-key>main_table.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="10" parent="3" name="Manager_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="11" parent="3" name="Manager_first_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="12" parent="3" name="Manager_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <key id="13" parent="3" name="PRIMARY">
+        <columns>Manager_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="14" parent="4" name="Manager_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="4" name="Manager_first_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="16" parent="4" name="Manager_name">
+        <data-type>varchar(45)</data-type>
+      </column>
+    </database-model>
+  </data-source>
+</component>
