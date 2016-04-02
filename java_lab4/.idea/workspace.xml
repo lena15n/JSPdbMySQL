@@ -116,8 +116,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66748166">
-              <caret line="147" column="91" selection-start-line="147" selection-start-column="91" selection-end-line="147" selection-end-column="91" />
+            <state vertical-scroll-proportion="0.4180929">
+              <caret line="208" column="63" selection-start-line="208" selection-start-column="63" selection-end-line="208" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -916,12 +916,12 @@
       <workItem from="1459450284016" duration="58000" />
       <workItem from="1459607620196" duration="4217000" />
       <workItem from="1459619182289" duration="7389000" />
-      <workItem from="1459630499513" duration="8841000" />
+      <workItem from="1459630499513" duration="9304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50764000" />
+    <option name="totallyTimeSpent" value="51227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -987,7 +987,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/out/artifacts/java_lab4_war_exploded/index.jsp</url>
-          <line>137</line>
+          <line>170</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -1617,19 +1617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/a672aea5/e50b9c9f-48cf-4e41-9f70-dd4a79229ee1/my_java_db_schema.dependent_java_table">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
@@ -1673,10 +1660,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/a672aea5/e50b9c9f-48cf-4e41-9f70-dd4a79229ee1/my_java_db_schema.dependent_java_table">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66748166">
-          <caret line="147" column="91" selection-start-line="147" selection-start-column="91" selection-end-line="147" selection-end-column="91" />
+        <state vertical-scroll-proportion="0.4180929">
+          <caret line="208" column="63" selection-start-line="208" selection-start-column="63" selection-end-line="208" selection-end-column="63" />
           <folding />
         </state>
       </provider>

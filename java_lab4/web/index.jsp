@@ -91,8 +91,7 @@
 
         <div style="margin: 5%; width: 300px; margin-left: 30%; margin-top: 10%">
             <form name="form1" >
-                <p><input type="submit" name="deleteFromFirst" value="Удалить строку из первой таблицы" style="text-align: center; width: 300px;">
-            </p><p> <input type="submit" name="deleteFromSecond" value="Удалить строку из второй таблицы" style="text-align: center; width: 300px;">
+                <p> </p><p> <input type="submit" name="deleteFromSecond" value="Удалить строку из второй таблицы" style="text-align: center; width: 300px;">
             </p>
             </form>
         </div>
@@ -174,6 +173,40 @@
                             DBComm.closeConnection();
 
                             out.println("Строка была добавлена!<br>");
+
+            %>
+            <a href="index.jsp">Обновите страницу</a>
+            <%
+                        }
+                    }
+
+            %>
+
+        </div>
+
+        <div style="margin: 5%; width: 500px; border: solid;">
+            <form style="text-align: center; align-content: center">
+                <p><input type="submit" name="deleteFromFirst" value="Удалить строку из первой таблицы" style="text-align: center; width: 300px;">
+                </p>
+
+                    <label>Введите номер сотрудника:
+                            <input name="delete1" maxlength="10" size="10" value="" style="left: 40px">
+                    </label>
+            </form>
+
+            <%
+                if(request!= null)
+                    if(request.getQueryString() != null) {
+                        if (request.getParameter("deleteFromFirst") != null) {
+                            int idToDelete = Integer.valueOf(request.getParameter("delete1"));
+
+                            DBComm.openConnection();
+
+                            DBComm.deleteFromFirstTable(idToDelete);
+
+                            DBComm.closeConnection();
+
+                            out.println("Строка №" + idToDelete + " была удалена!<br>");
 
             %>
             <a href="index.jsp">Обновите страницу</a>
