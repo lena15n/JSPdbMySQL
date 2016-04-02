@@ -18,6 +18,9 @@
 
 <div style="padding-left: 10%; height: 100%; width: 100%">
     <%
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
 
         /*
              if (request.getParameter("plusButton") != null) {
@@ -61,11 +64,11 @@
                 %>
             </table>
 
-            <table style="width: 40%; float: right; padding: 2%; top: -348px">
+            <table style="width: 40%; float: right; padding: 2%; ">
                 <% %>
                 <tr>
                     <th>Номер  <br>менеджера</th>
-                    <th>Фамилия менеджера</th>
+                    <th>Фамилия <br>менеджера</th>
                     <th>Имя  <br>менеджера</th>
                 </tr>
 
@@ -88,18 +91,61 @@
 
         <div style="margin: 5%; width: 300px; margin-left: 30%; margin-top: 10%">
             <form name="form1" >
-                <p></p><p><input type="submit" name="selectAll" value="Выбрать все" style="text-align: center; width: 300px;">
-            </p><p> <input type="submit" name="addInFirst" value="Добавить запись в первую таблицу" style="text-align: center; width: 300px;">
-            </p><p><input type="submit" name="addInSecond" value="Добавить запись во вторую таблицу" style="text-align: center; width: 300px;">
+                <p><input type="submit" name="addInSecond" value="Добавить запись во вторую таблицу" style="text-align: center; width: 300px;">
             </p><p><input type="submit" name="deleteFromFirst" value="Удалить строку из первой таблицы" style="text-align: center; width: 300px;">
             </p><p> <input type="submit" name="deleteFromSecond" value="Удалить строку из второй таблицы" style="text-align: center; width: 300px;">
             </p>
             </form>
         </div>
 
-        <div>
 
-            <table style="width: 20%">
+
+
+        <div style="margin: 5%; width: 500px; border: solid;">
+            <form style="text-align: center; align-content: center">
+                <p><input type="submit" name="addInFirst" value="Вставить строку в первую таблицу" style="text-align: center; width: 300px;"></p>
+
+            <table id="table">
+            <tr>
+                <th>Имя сотрудника</th>
+                <th>Номер <br>менеджера</th>
+            </tr>
+
+            <tr>
+                <td><input name="text11" maxlength="40" size="20" value="" style="left: 40px"></td>
+                <td><input name="text12" maxlength="20" size="5" value="" style="left: 40px"></td>
+            </tr>
+            </table>
+            </form>
+
+            <%
+            if(request!= null)
+                if(request.getQueryString() != null) {
+                    if (request.getParameter("addInFirst") != null) {
+                        int manager_id = Integer.valueOf(request.getParameter("text12"));
+                        String nameEmpl = request.getParameter("text11");
+
+                        DBComm.openConnection();
+
+                        DBComm.insertToFirstTable(manager_id, nameEmpl);
+
+                        DBComm.closeConnection();
+
+                        out.println("Строка была добавлена!<br>Обновите страницу");
+                    }
+                }
+
+        %>
+
+        </div>
+
+
+        <div  style="margin: 5%; width: 500px; float: left; border: solid">
+            <form style="text-align: center">
+                <p><input type="submit" name="selectAll" value="Выбрать все" style="text-align: center; width: 300px;"></p>
+            </form>
+
+            <table style="width: 20%; align-items: center">
                 <tr>
                     <th>Номер</th>
                     <th>Имя</th>
@@ -130,6 +176,7 @@
             </table>
             <%
                             out.println("<br><br><br><br><br><br>");
+
                         }
                     }%>
 

@@ -3,6 +3,7 @@ package dbcommunications;
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
 import java.sql.*;
+import java.util.Properties;
 
 /**
  * Created by Lena on 24.03.2016.
@@ -11,7 +12,7 @@ public class DBComm {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
     private static final String URL = "jdbc:mysql://localhost:3306/my_java_db_schema";
-    private static int id = 200;
+    private static int id = 10000;
     private static Connection connection;
 
     public static void openConnection() {
@@ -73,7 +74,9 @@ public class DBComm {
 
     public static void insertToSecondTable(String firstName, String name) {
         Statement statement = null;
-        id++;
+        id = findMaxId() + 1;
+
+
 
         try {
             statement = connection.createStatement();
@@ -88,7 +91,7 @@ public class DBComm {
 
     public static void insertToFirstTable(int managerId, String name) {
         Statement statement = null;
-        id++;
+        id = findMaxId() + 1;
 
         try {
             statement = connection.createStatement();
@@ -145,6 +148,33 @@ public class DBComm {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private static int findMaxId(){
+        Statement statement = null;
+        ResultSet resultSet;
+        int maxId = 1000;
+        String query1 = "SELECT MAX(Id) FROM dependent_java_table";
+        String query2 = "SELECT MAX(Manager_id) FROM main_table";
+
+        try {
+
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(query1);
+            resultSet.next();
+            maxId = resultSet.getInt(1);
+
+            resultSet = statement.executeQuery(query2);
+            resultSet.next();
+            int temp = resultSet.getInt(1);
+
+            if(maxId < temp)
+                maxId = temp;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return maxId;
     }
 
     /*public static void deleteFromFirstTable(int idOfItem) {
