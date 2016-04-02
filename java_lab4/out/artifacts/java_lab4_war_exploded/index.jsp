@@ -39,7 +39,7 @@
 
 
     <div style="width: 80%; height: 50%;">
-        <div  style="margin: 5%; height: 90%; width: 100%">
+        <div  style="margin-bottom: 15%; height: 100%; width: 100%">
             <table style="float: left; width: 50%; margin-bottom: 5%; padding: 2%;">
                 <% %>
                 <tr>
@@ -89,17 +89,8 @@
             </table>
         </div>
 
-        <div style="margin: 5%; width: 300px; margin-left: 30%; margin-top: 10%">
-            <form name="form1" >
-                <p> </p><p> <input type="submit" name="deleteFromSecond" value="Удалить строку из второй таблицы" style="text-align: center; width: 300px;">
-            </p>
-            </form>
-        </div>
 
-
-
-
-        <div style="margin: 5%; width: 500px; border: solid;">
+        <div style="margin-top: 0; margin-left: 5%; margin-bottom: 5%; width: 500px; border: solid; ">
             <form style="text-align: center; align-content: center">
                 <p><input type="submit" name="addInFirst" value="Вставить строку в первую таблицу" style="text-align: center; width: 300px;"></p>
 
@@ -203,6 +194,42 @@
                             DBComm.openConnection();
 
                             DBComm.deleteFromFirstTable(idToDelete);
+
+                            DBComm.closeConnection();
+
+                            out.println("Строка №" + idToDelete + " была удалена!<br>");
+
+            %>
+            <a href="index.jsp">Обновите страницу</a>
+            <%
+                        }
+                    }
+
+            %>
+        </div>
+
+
+
+
+        <div style="margin: 5%; width: 500px; border: solid;">
+            <form style="text-align: center; align-content: center">
+                <p> <input type="submit" name="deleteFromSecond" value="Удалить строку из второй таблицы" style="text-align: center; width: 300px;">
+                </p>
+
+                <label>Введите номер менеджера:
+                    <input name="delete2" maxlength="10" size="10" value="" style="left: 40px">
+                </label>
+            </form>
+
+            <%
+                if(request!= null)
+                    if(request.getQueryString() != null) {
+                        if (request.getParameter("deleteFromSecond") != null) {
+                            int idToDelete = Integer.valueOf(request.getParameter("delete2"));
+
+                            DBComm.openConnection();
+
+                            DBComm.deleteFromSecondTable(idToDelete);
 
                             DBComm.closeConnection();
 

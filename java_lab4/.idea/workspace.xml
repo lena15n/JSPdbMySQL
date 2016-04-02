@@ -116,8 +116,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4180929">
-              <caret line="208" column="63" selection-start-line="208" selection-start-column="63" selection-end-line="208" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.6259169">
+              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -916,12 +916,12 @@
       <workItem from="1459450284016" duration="58000" />
       <workItem from="1459607620196" duration="4217000" />
       <workItem from="1459619182289" duration="7389000" />
-      <workItem from="1459630499513" duration="9304000" />
+      <workItem from="1459630499513" duration="9884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51227000" />
+    <option name="totallyTimeSpent" value="51807000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -987,7 +987,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/out/artifacts/java_lab4_war_exploded/index.jsp</url>
-          <line>170</line>
+          <line>197</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -1675,8 +1675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4180929">
-          <caret line="208" column="63" selection-start-line="208" selection-start-column="63" selection-end-line="208" selection-end-column="63" />
+        <state vertical-scroll-proportion="0.6259169">
+          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
           <folding />
         </state>
       </provider>
