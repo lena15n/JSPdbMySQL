@@ -91,8 +91,7 @@
 
         <div style="margin: 5%; width: 300px; margin-left: 30%; margin-top: 10%">
             <form name="form1" >
-                <p><input type="submit" name="addInSecond" value="Добавить запись во вторую таблицу" style="text-align: center; width: 300px;">
-            </p><p><input type="submit" name="deleteFromFirst" value="Удалить строку из первой таблицы" style="text-align: center; width: 300px;">
+                <p><input type="submit" name="deleteFromFirst" value="Удалить строку из первой таблицы" style="text-align: center; width: 300px;">
             </p><p> <input type="submit" name="deleteFromSecond" value="Удалить строку из второй таблицы" style="text-align: center; width: 300px;">
             </p>
             </form>
@@ -131,11 +130,58 @@
 
                         DBComm.closeConnection();
 
-                        out.println("Строка была добавлена!<br>Обновите страницу");
+                        out.println("Строка была добавлена!<br>");
+
+            %>
+            <a href="index.jsp">Обновите страницу</a>
+            <%
                     }
                 }
 
         %>
+
+        </div>
+
+
+        <div style="margin: 5%; width: 500px; border: solid;">
+            <form style="text-align: center; align-content: center">
+                <p><input type="submit" name="addInSecond" value="Вставить строку во вторую таблицу" style="text-align: center; width: 300px;"></p>
+
+                <table id="table2">
+                    <tr>
+                        <th>Фамилия менеджера</th>
+                        <th>Имя менеджера</th>
+                    </tr>
+
+                    <tr>
+                        <td><input name="text21" maxlength="40" size="20" value="" style="left: 40px"></td>
+                        <td><input name="text22" maxlength="20" size="15" value="" style="left: 40px"></td>
+                    </tr>
+                </table>
+            </form>
+
+            <%
+                if(request!= null)
+                    if(request.getQueryString() != null) {
+                        if (request.getParameter("addInSecond") != null) {
+                            String surname = request.getParameter("text21");
+                            String name = request.getParameter("text22");
+
+                            DBComm.openConnection();
+
+                            DBComm.insertToSecondTable(surname, name);
+
+                            DBComm.closeConnection();
+
+                            out.println("Строка была добавлена!<br>");
+
+            %>
+            <a href="index.jsp">Обновите страницу</a>
+            <%
+                        }
+                    }
+
+            %>
 
         </div>
 
