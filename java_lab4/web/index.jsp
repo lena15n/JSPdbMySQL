@@ -21,26 +21,13 @@
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-
-        /*
-             if (request.getParameter("plusButton") != null) {
-                 out.println("Result: " + no1 + " + " + no2 + " = " + (no1 + no2));
-             } else if (request.getParameter("minusButton") != null) {
-                 out.println("Result: " + no1 + " - " + no2 + " = " + (no1 - no2));
-             } else if (request.getParameter("multButton") != null) {
-                 out.println("Result: " + no1 + " * " + no2 + " = " + (no1 * no2));
-             } else if (request.getParameter("divideButton") != null) {
-                 out.println("Result: " + no1 + " / " + no2 + " = " + (no1 / no2));
-             }
- */
-
-
     %>
 
 
     <div style="width: 80%; height: 50%;">
         <div  style="margin-bottom: 15%; height: 100%; width: 100%">
-            <table style="float: left; width: 50%; margin-bottom: 5%; padding: 2%;">
+            <p style=" margin-left: 20%; margin-bottom: -1%; margin-top: 2%"><b>ТАБЛИЦА 1</b></p>
+            <table style="float: left; width: 50%; margin-bottom: 5%; padding: 3%;">
                 <% %>
                 <tr>
                     <th>Номер  <br>сотрудника</th>
@@ -64,7 +51,9 @@
                 %>
             </table>
 
-            <table style="width: 40%; float: right; padding: 2%; ">
+
+            <p style="margin-left: 75%; margin-top: -1%"><b>ТАБЛИЦА 2</b></p>
+            <table style="margin-bottom: 5%; margin-top: -2%; width: 40%; float: right; padding: 2%; ">
                 <% %>
                 <tr>
                     <th>Номер  <br>менеджера</th>
@@ -90,7 +79,7 @@
         </div>
 
 
-        <div style="margin-top: 0; margin-left: 5%; margin-bottom: 5%; width: 500px; border: solid; ">
+        <div style="margin-top: 0; margin-left: 5%; margin-bottom: 5%; width: 500px; border: solid; text-align: center">
             <form style="text-align: center; align-content: center">
                 <p><input type="submit" name="addInFirst" value="Вставить строку в первую таблицу" style="text-align: center; width: 300px;"></p>
 
@@ -287,70 +276,7 @@
                     }%>
 
         </div>
-
     </div>
-
-
-    <%-- <form name="form1" >
-       <p><strong>Введите числа:</strong></p>
-
-       <%
-         /*int no1 = 1, no2 = 1;
-         if(request.getQueryString() != null){
-           no1 = Integer.valueOf(request.getParameter("number1"));
-           no2 = Integer.valueOf(request.getParameter("number2"));
-         }*/
-       %>
-
-       <input name="number1" maxlength="10" size="5" value="<%=no1%>" style="left: 40px">
-
-       <input name="number2" maxlength="10" size="5" value="<%=no2%>" style="left: 40px">
-
-       <br>
-       <br>
-
-       <div style="padding-left: 20px; margin-bottom: -20px">
-         <input type="submit" name="plusButton" value="+" style="text-align: center; width: 50px;">
-         <input type="submit" name="minusButton" value="-" style="text-align: center; width: 50px;">
-         <br>
-         <br>
-
-         <input type="submit" name="multButton" value="*" style="text-align: center; width: 50px;">
-         <input type="submit" name="divideButton" value="/" style="text-align: center; width: 50px;">
-       </div>
-     </form>
-
-     <br>
-
-     <%
-
-       /*if(request.getQueryString() != null) {
-         if (request.getParameter("number1").equals("")) {
-           no1 = 0;
-         } else {
-           no1 = Integer.valueOf(request.getParameter("number1"));
-         }
-         if (request.getParameter("number2").equals("")) {
-           no2 = 0;
-         } else {
-           no2 = Integer.valueOf(request.getParameter("number2"));
-         }
-         if (request.getParameter("plusButton") != null) {
-           out.println("Result: " + no1 + " + " + no2 + " = " + (no1 + no2));
-         } else if (request.getParameter("minusButton") != null) {
-           out.println("Result: " + no1 + " - " + no2 + " = " + (no1 - no2));
-         } else if (request.getParameter("multButton") != null) {
-           out.println("Result: " + no1 + " * " + no2 + " = " + (no1 * no2));
-         } else if (request.getParameter("divideButton") != null) {
-           out.println("Result: " + no1 + " / " + no2 + " = " + (no1 / no2));
-         }
-
-         //session.setAttribute("number1", no1);
-         //session.setAttribute("number2", no2);
-       }*/
-
-
-     %>--%>
 </div>
 
 </body>
